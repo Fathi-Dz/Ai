@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portofolio Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Inter',sans-serif;}
+    h1,h2,h3 {font-family:'Playfair Display',serif;}
+    [data-animate]{opacity:0;transform:translateY(40px);transition:all .8s ease;}
+    [data-animate].visible{opacity:1;transform:translateY(0);}
+    .project-card:hover img {transform:scale(1.08) rotate(-1deg);}
+    .project-card:hover .overlay {opacity:1;}
+    /* Tombol custom */
+    .btn-primary {background:#facc15;color:#111827;padding:.75rem 2rem;border-radius:9999px;transition:all .3s ease;}
+    .btn-primary:hover {background:#fde047;transform:translateY(-2px);}
+    /* Hover link navbar */
+    nav a {transition:color .3s ease;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 bg-white/70 backdrop-blur-md shadow">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="#" class="text-2xl font-extrabold text-yellow-500">Portofolio</a>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="#about" class="hover:text-yellow-500">About</a>
+      <a href="#projects" class="hover:text-yellow-500">Projects</a>
+      <a href="#contact" class="hover:text-yellow-500">Contact</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+      <span class="w-6 h-0.5 bg-gray-800"></span>
+      <span class="w-6 h-0.5 bg-gray-800"></span>
+      <span class="w-6 h-0.5 bg-gray-800"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden flex-col bg-white/95 backdrop-blur-md px-6 py-4 md:hidden">
+    <a href="#about" class="py-2 hover:text-yellow-500">About</a>
+    <a href="#projects" class="py-2 hover:text-yellow-500">Projects</a>
+    <a href="#contact" class="py-2 hover:text-yellow-500">Contact</a>
+  </div>
+</header>
+
+<!-- HERO VIDEO -->
+<section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <source src="/img/codin.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 max-w-3xl px-4 sm:px-6" data-animate>
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">Portofolio Premium</h1>
+    <p class="text-base sm:text-lg mb-8 text-gray-200">Membangun pengalaman digital dengan desain editorial & teknologi modern.</p>
+    <a href="#projects" class="btn-primary">Lihat Karya</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+  <img src="/img/pp.jfif" alt="Profil" class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300" data-animate>
+  <div data-animate>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-yellow-500">Tentang Saya</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Menggabungkan desain premium dan frontend modern untuk menciptakan website yang memukau. Menguasai React, Tailwind, animasi scroll, dan pengalaman UI/UX profesional.</p>
+    <p class="text-gray-600 leading-relaxed">Berpengalaman dengan brand kreatif dan startup teknologi.</p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-yellow-500" data-animate>Karya Unggulan</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" data-animate>
+    <div class="project-card relative rounded-xl overflow-hidden shadow-xl cursor-pointer group">
+      <img src="/img/project.jpg" alt="Project" class="w-full h-full object-cover transition-transform duration-500">
+      <div class="overlay absolute inset-0 bg-black/50 opacity-0 transition flex items-center justify-center text-white group-hover:opacity-100">
+        <div class="text-center">
+          <h3 class="text-xl font-bold">Project A</h3>
+          <p class="text-sm">UI/UX & Web</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card relative rounded-xl overflow-hidden shadow-xl cursor-pointer group">
+      <img src="/img/project1.jpg" alt="Project" class="w-full h-full object-cover transition-transform duration-500">
+      <div class="overlay absolute inset-0 bg-black/50 opacity-0 transition flex items-center justify-center text-white group-hover:opacity-100">
+        <div class="text-center">
+          <h3 class="text-xl font-bold">Project B</h3>
+          <p class="text-sm">Branding</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card relative rounded-xl overflow-hidden shadow-xl cursor-pointer group">
+      <img src="/img/project.jpg" alt="Project" class="w-full h-full object-cover transition-transform duration-500">
+      <div class="overlay absolute inset-0 bg-black/50 opacity-0 transition flex items-center justify-center text-white group-hover:opacity-100">
+        <div class="text-center">
+          <h3 class="text-xl font-bold">Project C</h3>
+          <p class="text-sm">Creative Direction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-white py-16 md:py-24">
+  <div class="max-w-3xl mx-auto text-center px-4 sm:px-6" data-animate>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-yellow-500">Mari Bekerja Sama</h2>
+    <p class="text-gray-600 mb-8 leading-relaxed">Hubungi saya untuk membicarakan proyek kreatif Anda.</p>
+    <a href="mailto:emailkamu@example.com" class="btn-primary inline-block">emailkamu@example.com</a>
+  </div>
+</section>
+
+<footer class="border-t border-gray-300 py-6 text-center text-sm text-gray-500">
+  © <span id="year"></span> Nama Kamu — Portofolio
+</footer>
+
+<script>
+  // Tahun dinamis
+  document.getElementById('year').textContent=new Date().getFullYear();
+  // Scroll animation
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}})
+  },{threshold:0.2});
+  document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
+  // Toggle mobile menu
+  const menuBtn=document.getElementById('menuBtn');
+  const mobileMenu=document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
+</script>
+
+</body>
+</html>
